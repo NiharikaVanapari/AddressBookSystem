@@ -6,11 +6,11 @@ public class Contact {
 	String city;
 	String state;
 	int zipcode;
-	String phonenumber;
+	long phonenumber;
 	String email;
 	
 	public Contact(String firstname, String lastname, String city, String state, int zipcode,
-			String phonenumber,String email) 
+			long phonenumber,String email) 
 	{
 		super();
 		this.firstname = firstname;
@@ -78,12 +78,12 @@ public class Contact {
 		this.zipcode = zipcode;
 	}
 
-	public String getPhonenumber() 
+	public long getPhonenumber() 
 	{
 		return phonenumber;
 	}
 
-	public void setPhonenumber(String phonenumber)
+	public void setPhonenumber(long phonenumber)
 	{
 		this.phonenumber = phonenumber;
 	}

@@ -1,6 +1,7 @@
 package addressBook;
 
 import java.util.ArrayList;
+
 import java.util.Scanner;
 
 public class AddressBookSystem
@@ -10,26 +11,33 @@ public class AddressBookSystem
 
     public void addContactDetails()
     {
-        System.out.println("Enter the Details of ContactDetails  person");
+        System.out.println("Enter the Details of ContactDetails");
         System.out.println("Enter the first name");
         String firstName = sc.next();
-        System.out.println("Enter the Last name");
-        String lastName = sc.next();
-        System.out.println("Enter the Address");
-        String address = sc.next();
-        System.out.println("Enter the City");
-        String city = sc.next();
-        System.out.println("Enter the State");
-        String state = sc.next();
-        System.out.println("Enter the email");
-        String email = sc.next();
-        System.out.println("Enter the ZipCode");
-        String zip = sc.next();
-        System.out.println("Enter the contact number...");
-        String phoneNumber = sc.next();
-        Contact contactofPerson = new Contact(firstName, lastName, address, city, state, email, phoneNumber, zip);
-        contactList.add(contactofPerson);
+        if (checkDuplicate(firstName)) 
+        {
+            System.out.println("Person is already exist");
+        }
+        else 
+        {
+            System.out.println("Enter the Last name");
+            String lastName = sc.next();
+            System.out.println("Enter the Address");
+            String address = sc.next();
+            System.out.println("Enter the City");
+            String city = sc.next();
+            System.out.println("Enter the State");
+            String state = sc.next();
+            System.out.println("Enter the email");
+            String email = sc.next();
+            System.out.println("Enter the ZipCode");
+            String zip = sc.next();
+            System.out.println("Enter the contact number...");
+            String phoneNumber = sc.next();
+            Contact contactofPerson = new Contact(firstName, lastName, address, city, state, email, phoneNumber, zip);
+            contactList.add(contactofPerson);
 
+        }
     }
 
     public boolean editContactDetails(String Name) 
@@ -37,13 +45,13 @@ public class AddressBookSystem
         int flag = 0;
         for(Contact contact: contactList)
         {
-            if(contact.getFirstName().equals(Name))		
+            if(contact.getFirstName().equals(Name))
             {
-                @SuppressWarnings("resource")
+        
 				Scanner sc = new Scanner(System.in);
                 System.out.println("Enter Address: ");
                 String address = sc.next();
-                contact.setCity(address);
+                contact.setAddress(address);
                 System.out.println("Enter City: ");
                 String city = sc.next();
                 contact.setCity(city);
@@ -54,11 +62,11 @@ public class AddressBookSystem
                 String email = sc.next();
                 contact.setEmail(email);
                 System.out.println("Enter Phone Number:");
-                long phoneNumber = sc.nextInt();
+                String phoneNumber = sc.next();
                 contact.setPhoneNumber(phoneNumber);
                 System.out.println("Enter Zip Code: ");
-                int zip = sc.nextInt();
-                contact.setZipcode(zip);
+                String zip = sc.next();
+                contact.setZip(zip);
                 flag = 1;
             }
         }
@@ -69,7 +77,7 @@ public class AddressBookSystem
         int flag = 0;
         for(Contact contact: contactList)
         {
-            if(contact.getFirstName1().equals(name))
+            if(contact.getFirstName().equals(name))
             {
                 contactList.remove(contact);
                 flag = 1;
@@ -77,12 +85,27 @@ public class AddressBookSystem
             }
         }
           return flag == 1;
-     }
+    }
+    public boolean checkDuplicate(String fname)
+    {
+        int flag=0;
+        for (Contact p: contactList)
+        {
+            if (p.getFirstName().equals(fname))
+            {
+                flag=1;
+                break;
+            }
+        }
+        return flag == 1;
+    }
+
+
+
       public void display() 
       {
   		for (Contact person : contactList)				
   			System.out.println(person);
-  	  }
-
+  	  } 
 
 }

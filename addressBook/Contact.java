@@ -4,11 +4,10 @@ package addressBook;
 public class Contact
 {
 
-		private String firstName, lastName, address, city, state, email, zip;
-		long phoneNumber;
+		private String firstName, lastName, address, city, state, email, zip, phoneNumber;
 
 		public Contact(String firstName, String lastName, String address, String city, String state, String email,
-				String phoneNumber2, String zip)
+				String phoneNumber, String zip)
 		{
 			setFirstName(firstName);
 			setLastName(lastName);
@@ -16,14 +15,9 @@ public class Contact
 			setCity(city);
 			setState(state);
 			setEmail(email);
-			setPhoneNumber(phoneNumber2);
+			setPhoneNumber(phoneNumber);
 			setZip(zip);
 
-		}
-
-		private void setPhoneNumber(String phoneNumber2) {
-			// TODO Auto-generated method stub
-			
 		}
 
 		public Contact()
@@ -31,7 +25,7 @@ public class Contact
 
 		}
 
-		public String getFirstName1() 
+		public String getFirstName() 
 		{
 			return firstName;
 		}
@@ -101,23 +95,13 @@ public class Contact
 			this.zip = zip;
 		}
 
-		public long getPhoneNumber()
+		public String getPhoneNumber()
 		{
 			return phoneNumber;
 		}
 
-		public void setPhoneNumber(long phoneNumber2) 
+		public void setPhoneNumber(String phoneNumber) 
 		{
-			this.phoneNumber = phoneNumber2;
-		}
-
-		public void setZipcode(int zip2) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		public Object getFirstName() {
-			// TODO Auto-generated method stub
-			return null;
+			this.phoneNumber = phoneNumber;
 		}
 }

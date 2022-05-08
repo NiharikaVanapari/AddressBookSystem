@@ -1,109 +1,123 @@
 package addressBook;
 
-public class Contact {
-	String firstname;
-	String lastname;
-	String city;
-	String state;
-	int zipcode;
-	long phonenumber;
-	String email;
-	
-	public Contact(String firstname, String lastname, String city, String state, int zipcode,
-			long phonenumber,String email) 
-	{
-		super();
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.city = city;
-		this.state = state;
-		this.zipcode = zipcode;
-		this.phonenumber = phonenumber;
-		this.email = email;
-	}
 
+public class Contact
+{
 
-	public Contact() 
-	{
-	}
+		private String firstName, lastName, address, city, state, email, zip;
+		long phoneNumber;
 
+		public Contact(String firstName, String lastName, String address, String city, String state, String email,
+				String phoneNumber2, String zip)
+		{
+			setFirstName(firstName);
+			setLastName(lastName);
+			setAddress(address);
+			setCity(city);
+			setState(state);
+			setEmail(email);
+			setPhoneNumber(phoneNumber2);
+			setZip(zip);
 
-	public String getFirstname() 
-	{
-		return firstname;
-	}
+		}
 
-	public void setFirstname(String firstname) 
-	{
-		this.firstname = firstname;
-	}
+		private void setPhoneNumber(String phoneNumber2) {
+			// TODO Auto-generated method stub
+			
+		}
 
-	public String getLastname() 
-	{
-		return lastname;
-	}
+		public Contact()
+		{
 
-	public void setLastname(String lastname) 
-	{
-		this.lastname = lastname;
-	}
+		}
 
-	public String getCity() 
-	{
-		return city;
-	}
+		public String getFirstName1() 
+		{
+			return firstName;
+		}
 
-	public void setCity(String city) 
-	{
-		this.city = city;
-	}
+		public void setFirstName(String firstName) 
+		{
+			this.firstName = firstName;                                           
+		}
 
-	public String getState() 
-	{
-		return state;
-	}
+		public String getLastName() 
+		{
+			return lastName;
+		}
 
-	public void setState(String state) 
-	{
-		this.state = state;
-	}
+		public void setLastName(String lastName)
+		{
+			this.lastName = lastName;
+		}
 
-	public int getZipcode() 
-	{
-		return zipcode;
-	}
+		public String getAddress()
+		{
+			return address;
+		}
 
-	public void setZipcode(int zipcode) 
-	{
-		this.zipcode = zipcode;
-	}
+		public void setAddress(String address) 
+		{
+			this.address = address;
+		}
 
-	public long getPhonenumber() 
-	{
-		return phonenumber;
-	}
+		public String getCity() 
+		{
+			return city;
+		}
 
-	public void setPhonenumber(long phonenumber)
-	{
-		this.phonenumber = phonenumber;
-	}
-	
-	public String getEmail() 
-	{
-		return email;
-		
-	}
-	
-	public void setEmail(String email) 
-	{
-		this.email = email;
-	}
+		public void setCity(String city) 
+		{
+			this.city = city;
+		}
 
-	@Override
-	public String toString() 
-	{
-		return "Contact [firstname=" + firstname + ", lastname=" + lastname + ", city=" + city + ", state="
-				+ state + ", zipcode=" + zipcode + ", phonenumber=" + phonenumber + ",email="+email+"]";
-	}
+		public String getState()
+		{
+			return state;
+		}
 
+		public void setState(String state) 
+		{
+			this.state = state;
+		}
+
+		public String getEmail() 
+		{
+			return email;
+		}
+
+		public void setEmail(String email)
+		{
+			this.email = email;
+		}
+
+		public String getZip()
+		{
+			return zip;
+		}
+
+		public void setZip(String zip) 
+		{
+			this.zip = zip;
+		}
+
+		public long getPhoneNumber()
+		{
+			return phoneNumber;
+		}
+
+		public void setPhoneNumber(long phoneNumber2) 
+		{
+			this.phoneNumber = phoneNumber2;
+		}
+
+		public void setZipcode(int zip2) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		public Object getFirstName() {
+			// TODO Auto-generated method stub
+			return null;
+		}
 }
